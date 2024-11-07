@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "./Image";
+import { baseUrl } from "../App";
 
 const PhotoUploader = ({addeddPhotos, onChange}) => {
     const [photoLink, setPhotoLink] = useState('');
@@ -11,7 +12,7 @@ const PhotoUploader = ({addeddPhotos, onChange}) => {
             return
         }
         try {
-            const response = await fetch('http://localhost:4000/api/upload-by-link', {
+            const response = await fetch(baseUrl + '/api/upload-by-link', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
@@ -39,7 +40,7 @@ const PhotoUploader = ({addeddPhotos, onChange}) => {
           formData.append('photos', files[i]);
         }
         try {
-          const response = await fetch('http://localhost:4000/api/upload', {
+          const response = await fetch(baseUrl + '/api/upload', {
               method: "POST",
               body: formData
           })

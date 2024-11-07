@@ -67,7 +67,7 @@ const AddNewHotels = () => {
       }
       if (id) {
         try {
-          const response = await fetch('http://localhost:4000/api/places', {
+          const response = await fetch(baseUrl + '/api/places', {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ const AddNewHotels = () => {
         }
       } else {
         try {
-          const response = await fetch('http://localhost:4000/api/places', {
+          const response = await fetch(baseUrl + '/api/places', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
