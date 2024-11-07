@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { baseUrl } from "../App";
 
 export const UserContext = createContext({});
 
@@ -10,7 +11,7 @@ export function UserContextProvider({children}) {
         if(!user) {
             const fetchUserInfo = async () => {
                 try {
-                    const response = await fetch('http://localhost:4000/api/profile', {
+                    const response = await fetch(baseUrl + '/api/profile', {
                         method: "GET",
                         headers: {
                             'Content-Type': 'application/json'

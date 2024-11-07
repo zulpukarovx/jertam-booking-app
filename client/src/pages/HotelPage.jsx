@@ -6,6 +6,7 @@ import AddressLink from "../components/AddressLink";
 import ShowAllPhotos from "../components/ShowAllPhotos";
 import Image from "../components/Image";
 import HotelPerks from "../components/HotelPerks";
+import { baseUrl } from "../App";
 
 
 
@@ -23,7 +24,7 @@ const HotelPage = () => {
         }
         const fetchPlace = async () =>  {
             try {
-                const response = await fetch(`http://localhost:4000/api/place/${id}`);
+                const response = await fetch(`${baseUrl}/api/place/${id}`);
                 const data = await response.json();
                 setPlace(data)
             } catch (error) {

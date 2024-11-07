@@ -13,6 +13,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { Navigate } from "react-router-dom"
 import { UserContext } from "../context/UserContext"
 import { toast } from "sonner"
+import { baseUrl } from "../App"
 
 const BookingWidget = ({ place }) => {
     const {user} = useContext(UserContext);
@@ -58,7 +59,7 @@ const BookingWidget = ({ place }) => {
         };
 
         try {
-            const response = await fetch(`http://localhost:4000/api/bookings`, {
+            const response = await fetch(`${baseUrl}/api/bookings`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

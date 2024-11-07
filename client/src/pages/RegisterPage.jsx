@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button"
+import { baseUrl } from "../App";
 
 const RegisterPage = () => {
   const [name, setName] = useState('');
@@ -22,7 +23,7 @@ const RegisterPage = () => {
 
     try {
         setIsLoading(true);
-        const response = await fetch('http://localhost:4000/api/register', {
+        const response = await fetch(baseUrl + '/api/register', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

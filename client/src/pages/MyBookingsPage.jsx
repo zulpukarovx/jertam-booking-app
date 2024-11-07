@@ -4,6 +4,7 @@ import { differenceInCalendarDays } from "date-fns";
 import { Link } from "react-router-dom";
 import BookingDatesBadge from "../components/BookingDatesBadge";
 import { motion } from "framer-motion";
+import { baseUrl } from "../App";
 
 const MyBookingsPage = () => {
   const [bookings, setBooking] = useState([]);
@@ -12,7 +13,7 @@ const MyBookingsPage = () => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const response = await fetch('http://localhost:4000/api/bookings', {
+      const response = await fetch(baseUrl + '/api/bookings', {
         method: "GET",
         headers: {
             'Content-Type': 'application/json'

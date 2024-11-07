@@ -4,6 +4,7 @@ import AddressLink from "../components/AddressLink";
 import { differenceInCalendarDays, format } from "date-fns";
 import BookingDatesBadge from "../components/BookingDatesBadge";
 import ShowAllPhotos from "../components/ShowAllPhotos";
+import { baseUrl } from "../App";
 
 const BookingPage = () => {
     const {id} = useParams();
@@ -12,7 +13,7 @@ const BookingPage = () => {
 
     useEffect(() => {
         const fetchBookings = async () => {
-          const response = await fetch('http://localhost:4000/api/bookings', {
+          const response = await fetch(baseUrl + '/api/bookings', {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'

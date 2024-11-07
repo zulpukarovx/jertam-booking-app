@@ -13,6 +13,8 @@ import HotelPage from "./pages/HotelPage";
 import BookingPage from "./pages/BookingPage";
 import { AnimatePresence } from "framer-motion";
 
+export const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
 function App() {
   return (
     <UserContextProvider>

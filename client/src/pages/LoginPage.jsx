@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
+import { baseUrl } from "../App";
 
 const LoginPage = () => {
 
@@ -16,7 +17,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       setIsLoading(prev => !prev);
-      const response = await fetch('http://localhost:4000/api/login', {
+      const response = await fetch(baseUrl + '/api/login', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'

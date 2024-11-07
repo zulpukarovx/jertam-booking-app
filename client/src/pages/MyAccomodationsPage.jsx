@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AccommodationCard from "../components/AccommodationCard";
+import { baseUrl } from "../App";
 
 const MyAccomodationsPage = () => {
   const [places, setPlaces] = useState([]);
@@ -10,7 +11,7 @@ const MyAccomodationsPage = () => {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/user-places', {
+        const response = await fetch(baseUrl + '/api/user-places', {
           method: "GET",
           headers: {
             'Content-Type': 'application/json'

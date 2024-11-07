@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react"
 import PlaceCard from "../components/PlaceCard";
+import { baseUrl } from "../App";
 
 const IndexPage = () => {
   const [places, setPlaces] = useState([]);
@@ -9,7 +10,7 @@ const IndexPage = () => {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/places/'); // Assuming API is on the same origin
+        const response = await fetch(baseUrl + '/api/places/'); // Assuming API is on the same origin
         if (!response.ok) {
           throw new Error('Failed to fetch places');
         }

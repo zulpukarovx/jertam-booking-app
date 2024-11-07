@@ -3,6 +3,7 @@ import { UserContext } from "../context/UserContext"
 import { toast } from "sonner";
 import ButtonDialog from "./ButtonDialog";
 import { motion } from "framer-motion";
+import { baseUrl } from "../App";
 
 const ProfilePage = () => {
     const [redirect, setRedirect] = useState(null);
@@ -11,7 +12,7 @@ const ProfilePage = () => {
     const logout = async (e) => {
       e.preventDefault();
       try {
-        const response = await fetch('http://localhost:4000/api/logout', {
+        const response = await fetch(baseUrl + '/api/logout', {
           method: "POST",
           headers: {
             'Content-Type': 'application/json'

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Perks from "../components/Perks"
 import { Link, Navigate, useParams } from "react-router-dom";
 import PhotoUploader from "../components/PhotoUploader";
+import { baseUrl } from "../App";
 
 
 const AddNewHotels = () => {
@@ -24,7 +25,7 @@ const AddNewHotels = () => {
       }
       const fetchPlaces = async () =>  {
           try {
-              const response = await fetch(`http://localhost:4000/api/user-places/${id}`, {
+              const response = await fetch(`${baseUrl}/api/user-places/${id}`, {
                   method: "GET",
                   headers: {
                       'Content-Type': 'application/json'
